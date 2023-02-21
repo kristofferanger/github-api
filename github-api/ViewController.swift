@@ -12,6 +12,17 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        NetworkManager.getRepos { result in
+            switch result {
+            case .success(let repos):
+                repos.forEach { repo in
+                    print(repo.name)
+                }
+            case .failure(let error):
+                print("\(error.localizedDescription)")
+            }
+        }
     }
 
 
