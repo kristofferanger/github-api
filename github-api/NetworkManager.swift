@@ -11,12 +11,12 @@ import Foundation
 class NetworkManager {
     
     // add your personal data here
-    private static let user = "kristofferanger"
+    private static let owner = "kristofferanger"
     private static let token = "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"
 
     // public methods
     static func getRepos(completion: @escaping(Result<[Repo], Error>) -> Void) {
-        NetworkManager.getData(endpoint: "/users/\(user)/repos", completion: completion)
+        NetworkManager.getData(endpoint: "/users/\(owner)/repos", completion: completion)
     }
 
     // constants
@@ -37,7 +37,11 @@ class NetworkManager {
                 completion(.failure(error ?? fallbackError(response: response)))
                 return
             }
-            completion(data.decodedResult(type: T.self))
+            let result = data.decodedResult(type: T.self)
+            // return decoded result on main thread
+            DispatchQueue.main.async {
+                completion(result)
+            }
         }
         task.resume()
     }

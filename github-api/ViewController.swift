@@ -8,21 +8,33 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var viewModel: RepoListViewModel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        // init view model and start loading data
+        viewModel = RepoListViewModel()
+        viewModel.loading = loading
+        viewModel.showError = showError
+        viewModel.showData = showData
+        viewModel.state = .isLoading
         
-        NetworkManager.getRepos { result in
-            switch result {
-            case .success(let repos):
-                repos.forEach { repo in
-                    print(repo.name)
-                }
-            case .failure(let error):
-                print("\(error.localizedDescription)")
-            }
-        }
+        // set navbar title
+        navigationController?.navigationBar.prefersLargeTitles = true
+        self.title = "My repositories"
+    }
+    
+    func loading() {
+        // show spinner
+    }
+    
+    func showError(_ error: Error) {
+        // show error view
+    }
+    
+    func showData(_ data: [Repo]) {
+        // show repos
     }
 
 
