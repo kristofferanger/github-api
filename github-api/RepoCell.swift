@@ -8,6 +8,9 @@
 import UIKit
 
 class RepoCell: UITableViewCell {
+    
+    static let identifier = "RepoCell"
+
 
 
 }

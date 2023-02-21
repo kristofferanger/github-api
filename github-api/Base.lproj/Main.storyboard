@@ -16,9 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="qtQ-J6-YgV">
-                                <rect key="frame" x="0.0" y="103" width="393" height="749"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="qtQ-J6-YgV">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="gray" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RepoCell" id="W1s-mi-NVG" customClass="RepoCell" customModule="github_api" customModuleProvider="target">
@@ -31,11 +30,26 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="3GT-7H-lFx">
+                                <rect key="frame" x="186.66666666666666" y="450.66666666666669" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="3GT-7H-lFx" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="7WW-9N-gSy"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qtQ-J6-YgV" secondAttribute="trailing" id="ING-G8-6b6"/>
+                            <constraint firstItem="qtQ-J6-YgV" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="RAN-hW-Jkq"/>
+                            <constraint firstItem="qtQ-J6-YgV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ZSC-Ds-aep"/>
+                            <constraint firstItem="3GT-7H-lFx" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="iUH-HD-Q3D"/>
+                            <constraint firstItem="qtQ-J6-YgV" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="pGZ-Sl-D9G"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="6ZL-23-XS5"/>
+                    <connections>
+                        <outlet property="spinner" destination="3GT-7H-lFx" id="Acc-Da-Omu"/>
+                        <outlet property="tableView" destination="qtQ-J6-YgV" id="noU-ed-Ack"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

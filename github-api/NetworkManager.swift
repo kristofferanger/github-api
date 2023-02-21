@@ -24,7 +24,7 @@ class NetworkManager {
     
     // calculated stuff
     private static var headers: [String: String] {
-        return ["Accept": "application/vnd.github+json", "Authorization": "Bearer \(token)"]
+        return ["Accept": "application/vnd.github+json", "Authorization": "Bearer \(token)", "X-GitHub-Api-Version": "2022-11-28"]
     }
     
     // private methods

@@ -9,12 +9,14 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     var viewModel: RepoListViewModel!
     
-    static let repoCellIdentifier = "RepoCell"
-
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .lightGray
+        
         // init view model and start loading data
         viewModel = RepoListViewModel()
         viewModel.loading = loading
@@ -25,19 +27,27 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         // set navbar title
         navigationController?.navigationBar.prefersLargeTitles = true
         self.title = "My repositories"
+        
+        // setup tableView
+        tableView.dataSource = self
+        tableView.delegate = self
     }
     
     // MARK: - RepoListViewModel methods
     func loading() {
         // show spinner
+        spinner.isHidden = false
     }
     
     func showError(_ error: Error) {
         // show error view
+        spinner.isHidden = true
     }
     
     func showData() {
         // show repos
+        spinner.isHidden = true
+        tableView.reloadData()
     }
 
     
@@ -47,7 +57,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: ViewController.repoCellIdentifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: RepoCell.identifier, for: indexPath) as! RepoCell
         
         let repo = viewModel.repos[indexPath.row]
         
