@@ -19,6 +19,8 @@
 		E395A1A229A4E4ED0040111F /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E395A1A029A4E4ED0040111F /* NetworkManager.swift */; };
 		E395A1A429A5477B0040111F /* RepoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E395A1A329A5477B0040111F /* RepoListViewModel.swift */; };
 		E395A1A529A5477B0040111F /* RepoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E395A1A329A5477B0040111F /* RepoListViewModel.swift */; };
+		E395A1A729A55E460040111F /* RepoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E395A1A629A55E460040111F /* RepoCell.swift */; };
+		E395A1A829A55E460040111F /* RepoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E395A1A629A55E460040111F /* RepoCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,7 @@
 		E395A19E29A4E2890040111F /* ModelObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelObjects.swift; sourceTree = "<group>"; };
 		E395A1A029A4E4ED0040111F /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		E395A1A329A5477B0040111F /* RepoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListViewModel.swift; sourceTree = "<group>"; };
+		E395A1A629A55E460040111F /* RepoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +115,7 @@
 				E395A19E29A4E2890040111F /* ModelObjects.swift */,
 				E395A1A029A4E4ED0040111F /* NetworkManager.swift */,
 				E395A1A329A5477B0040111F /* RepoListViewModel.swift */,
+				E395A1A629A55E460040111F /* RepoCell.swift */,
 			);
 			path = "github-api";
 			sourceTree = "<group>";
@@ -256,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E395A19F29A4E2890040111F /* ModelObjects.swift in Sources */,
+				E395A1A729A55E460040111F /* RepoCell.swift in Sources */,
 				E395A17329A4E24A0040111F /* ViewController.swift in Sources */,
 				E395A1A429A5477B0040111F /* RepoListViewModel.swift in Sources */,
 				E395A1A129A4E4ED0040111F /* NetworkManager.swift in Sources */,
@@ -271,6 +276,7 @@
 				E395A1A229A4E4ED0040111F /* NetworkManager.swift in Sources */,
 				E395A18629A4E24D0040111F /* github_apiTests.swift in Sources */,
 				E395A1A529A5477B0040111F /* RepoListViewModel.swift in Sources */,
+				E395A1A829A55E460040111F /* RepoCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,17 +10,17 @@ import Foundation
 enum LoadingState {
     case unknown
     case isLoading
-    case finished([Repo])
+    case finished
     case error(Error)
 }
 
 class RepoListViewModel {
     
-    let repoOwner: String = NetworkManager.owner
-    
+    var repos = [Repo]()
+        
     var loading: (() -> Void) = {}
     var showError: ((Error) -> Void) = { _ in }
-    var showData: (([Repo]) -> Void) = { _ in }
+    var showData: (() -> Void) = {}
     
     var state: LoadingState = .unknown {
         didSet {
@@ -29,8 +29,8 @@ class RepoListViewModel {
                 self.loadRepos()
             case .error(let error):
                 self.showError(error)
-            case .finished(let repos):
-                self.showData(repos)
+            case .finished:
+                self.showData()
             case .unknown:
                 break
             }
@@ -42,7 +42,8 @@ class RepoListViewModel {
         NetworkManager.getRepos { [weak self] result in
             switch result {
             case .success(let repos):
-                self?.state = .finished(repos)
+                self?.repos = repos
+                self?.state = .finished
             case .failure(let error):
                 self?.state = .error(error)
             }

@@ -7,9 +7,11 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var viewModel: RepoListViewModel!
+    
+    static let repoCellIdentifier = "RepoCell"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +27,7 @@ class ViewController: UIViewController {
         self.title = "My repositories"
     }
     
+    // MARK: - RepoListViewModel methods
     func loading() {
         // show spinner
     }
@@ -33,10 +36,25 @@ class ViewController: UIViewController {
         // show error view
     }
     
-    func showData(_ data: [Repo]) {
+    func showData() {
         // show repos
     }
 
+    
+    //  MARK: - UITableViewDataSource methods
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.repos.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: ViewController.repoCellIdentifier, for: indexPath)
+        
+        let repo = viewModel.repos[indexPath.row]
+        
+        cell.textLabel?.text = repo.name
+        
+        return cell
+    }
 
 }
 
