@@ -15,7 +15,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor(hex: kGreenColor)
+        self.view.backgroundColor = UIColor(hex: kLightGreenColor)
 
         // init view model and start loading data
         viewModel = RepoListViewModel()

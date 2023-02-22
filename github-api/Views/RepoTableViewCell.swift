@@ -25,12 +25,12 @@ class RepoTableViewCell: UITableViewCell {
     }
     
     func configure(with repo: Repo) {
-        
         // set title
         titleLabel.text = repo.name
         
         // set visibiliy label
         visibilityLabel.text = repo.visibility
+        visibilityLabel.textColor = UIColor(hex: kTealColor)
         
         // set description
         descriptionLabel.text = repo.description
@@ -38,17 +38,24 @@ class RepoTableViewCell: UITableViewCell {
         // set language
         let attachment = NSTextAttachment()
         let config = UIImage.SymbolConfiguration(scale: .small)
-        attachment.image = UIImage(systemName: "doc", withConfiguration: config)?.withTintColor(.systemRed, renderingMode: .alwaysOriginal)
+        let color = self.color(for: repo.language)
+        attachment.image = UIImage(systemName: "doc", withConfiguration: config)?.withTintColor(color, renderingMode: .alwaysOriginal)
         let imageString = NSMutableAttributedString(attachment: attachment)
         let textString = NSAttributedString(string: " " + repo.language)
         imageString.append(textString)
         languageLabel.attributedText = imageString
         languageLabel.sizeToFit()
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    // Helpers
+    func color(for language: String) -> UIColor {
+        switch language.lowercased() {
+        case "swift":
+            return .systemRed
+        case "objective-c":
+            return .systemBlue
+        default:
+            return .systemGreen
+        }
     }
 }
