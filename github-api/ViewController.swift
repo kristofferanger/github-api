@@ -15,7 +15,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .lightGray
+        self.view.backgroundColor = .red
         
         // init view model and start loading data
         viewModel = RepoListViewModel()
@@ -49,7 +49,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         spinner.isHidden = true
         tableView.reloadData()
     }
-
+    
+    func reloadData() {
+        viewModel.state = .isLoading
+    }
     
     //  MARK: - UITableViewDataSource methods
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

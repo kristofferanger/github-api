@@ -34,7 +34,10 @@ class NetworkManager {
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data else {
-                completion(.failure(error ?? fallbackError(response: response)))
+                // return error on main thread
+                DispatchQueue.main.async {
+                    completion(.failure(error ?? fallbackError(response: response)))
+                }
                 return
             }
             let result = data.decodedResult(type: T.self)
@@ -139,6 +142,7 @@ extension Data {
             default:
                 errorMessage = "Unknown error: \(error.localizedDescription)"
             }
+            // print error message
             print(errorMessage)
             // return decode error
             return Swift.Result.failure(error)
