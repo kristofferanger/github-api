@@ -42,6 +42,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func showError(_ error: Error) {
         // show error view
         spinner.isHidden = true
+        let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+
+        let action = UIAlertAction(title: "Try again", style: .default) { [weak self] _ in
+            self?.viewModel.state = .isLoading
+        }
+        alert.addAction(action)
+        self.present(alert, animated: true)
     }
     
     func showData() {
