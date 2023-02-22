@@ -15,7 +15,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor(hex: self.traitCollection.userInterfaceStyle == .dark ? kTealColor : kLightGreenColor)
+        self.view.backgroundColor = UIColor.backgroundColor
 
         // init view model and start loading data
         viewModel = RepoListViewModel()
@@ -78,9 +78,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let repo = viewModel.repos[indexPath.row]
-        guard let url = URL(string: repo.htmlUrl) else { return }
-        UIApplication.shared.open(url)
         
+        let detailView = DetailViewController()
+        detailView.repo = repo
+        
+        self.navigationController?.pushViewController(detailView, animated: true)
     }
 
 }
