@@ -11,7 +11,7 @@ import UIKit
 let kPeachColor = 0xFFD4B2FF
 let kYellowColor = 0xFFF6BDFF
 let kGreenColor = 0xCEEDC7FF
-let kLightGreenColor = 0xE6F6E3FF
+let kLightGreenColor = 0xDCF2D7FF
 let kTealColor = 0x86C8BCFF
 
 extension UIColor {

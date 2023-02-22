@@ -68,5 +68,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let repo = viewModel.repos[indexPath.row]
+        guard let url = URL(string: repo.htmlUrl) else { return }
+        UIApplication.shared.open(url)
+        
+    }
 
 }

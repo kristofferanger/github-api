@@ -25,6 +25,7 @@
 		E395A1B029A5E55A0040111F /* UIView+additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E395A1AC29A5E55A0040111F /* UIView+additions.swift */; };
 		E395A1B529A5E9430040111F /* RepoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E395A1B429A5E9430040111F /* RepoTableViewCell.swift */; };
 		E395A1B629A5E9430040111F /* RepoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E395A1B429A5E9430040111F /* RepoTableViewCell.swift */; };
+		E395A1B729A614440040111F /* ModelObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = E395A19E29A4E2890040111F /* ModelObjects.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,12 +112,11 @@
 		E395A16D29A4E24A0040111F /* github-api */ = {
 			isa = PBXGroup;
 			children = (
-				E395A19E29A4E2890040111F /* ModelObjects.swift */,
-				E395A1A329A5477B0040111F /* RepoListViewModel.swift */,
+				E395A1B829A6144F0040111F /* ViewModels */,
 				E395A1B329A5E6B50040111F /* ViewControllers */,
-				E395A1B229A5E6410040111F /* Managers */,
+				E395A1B229A5E6410040111F /* Model */,
 				E395A1B129A5E5B10040111F /* Views */,
-				E395A1AA29A5E5050040111F /* Extensioins */,
+				E395A1AA29A5E5050040111F /* Helpers */,
 				E395A1A929A5E4E10040111F /* Resources */,
 				E395A17C29A4E24D0040111F /* Info.plist */,
 			);
@@ -143,13 +143,14 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		E395A1AA29A5E5050040111F /* Extensioins */ = {
+		E395A1AA29A5E5050040111F /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				E395A1A029A4E4ED0040111F /* NetworkManager.swift */,
 				E395A1AB29A5E55A0040111F /* UIColor+additions.swift */,
 				E395A1AC29A5E55A0040111F /* UIView+additions.swift */,
 			);
-			path = Extensioins;
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		E395A1B129A5E5B10040111F /* Views */ = {
@@ -160,12 +161,12 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		E395A1B229A5E6410040111F /* Managers */ = {
+		E395A1B229A5E6410040111F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E395A1A029A4E4ED0040111F /* NetworkManager.swift */,
+				E395A19E29A4E2890040111F /* ModelObjects.swift */,
 			);
-			path = Managers;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		E395A1B329A5E6B50040111F /* ViewControllers */ = {
@@ -174,6 +175,14 @@
 				E395A17229A4E24A0040111F /* ViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		E395A1B829A6144F0040111F /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				E395A1A329A5477B0040111F /* RepoListViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -323,6 +332,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E395A1B729A614440040111F /* ModelObjects.swift in Sources */,
 				E395A1B029A5E55A0040111F /* UIView+additions.swift in Sources */,
 				E395A1A229A4E4ED0040111F /* NetworkManager.swift in Sources */,
 				E395A18629A4E24D0040111F /* github_apiTests.swift in Sources */,

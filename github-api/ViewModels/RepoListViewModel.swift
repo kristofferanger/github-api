@@ -42,7 +42,7 @@ class RepoListViewModel {
         NetworkManager.getRepos { [weak self] result in
             switch result {
             case .success(let repos):
-                self?.repos = repos
+                self?.repos = repos.sorted(by: { $0.createdAt > $1.createdAt })
                 self?.state = .finished
             case .failure(let error):
                 self?.state = .error(error)
