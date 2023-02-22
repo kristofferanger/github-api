@@ -29,23 +29,21 @@ class RepoTableViewCell: UITableViewCell {
         // set title
         titleLabel.text = repo.name
         
+        // set visibiliy label
+        visibilityLabel.text = repo.visibility
+        
         // set description
         descriptionLabel.text = repo.description
         
         // set language
-        languageLabel.text = repo.language
-        
-        
-        // configure visibiliy label
         let attachment = NSTextAttachment()
-        attachment.image = UIImage(systemName: "capsule")
-
+        let config = UIImage.SymbolConfiguration(scale: .small)
+        attachment.image = UIImage(systemName: "doc", withConfiguration: config)?.withTintColor(.systemRed, renderingMode: .alwaysOriginal)
         let imageString = NSMutableAttributedString(attachment: attachment)
-        let textString = NSAttributedString(string: repo.visibility)
+        let textString = NSAttributedString(string: " " + repo.language)
         imageString.append(textString)
-
-        visibilityLabel.attributedText = imageString
-        visibilityLabel.sizeToFit()
+        languageLabel.attributedText = imageString
+        languageLabel.sizeToFit()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

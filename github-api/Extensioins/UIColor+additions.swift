@@ -8,8 +8,10 @@
 
 import UIKit
 
-let kPinkColor = 0xffbabaff
-let kLightPinkColor = 0xffededff
+let kPeachColor = 0xFFD4B2FF
+let kYellowColor = 0xFFF6BDFF
+let kGreenColor = 0xCEEDC7FF
+let kTealColor = 0x86C8BCFF
 
 extension UIColor {
     
