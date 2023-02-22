@@ -18,12 +18,18 @@ final class github_apiTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    func testAuthorization() throws {
+        // check if autorization is added correctly to the request
+        // ["Accept": "application/vnd.github+json", "Authorization": "Bearer \(token)", "X-GitHub-Api-Version": "2022-11-28"]
+        let request = NetworkManager.headerTestRequest
+        let value = request.value(forHTTPHeaderField: "Authorization")
+        // auth header exists
+        XCTAssertNotNil(value)
+        // test if auth keyword is included
+        XCTAssert(value!.hasPrefix("Bearer"))
+        // test if token is added
+        XCTAssertNotNil(value!.split(separator: " ").last)
+        XCTAssert(value!.split(separator: " ").last!.count > 10)
     }
 
     func testPerformanceExample() throws {

@@ -20,11 +20,15 @@ class NetworkManager {
     }
 
     // constants
-    private static let baseUrl = "https://api.github.com"
+    static let baseUrl = "https://api.github.com"
     
     // calculated stuff
-    private static var headers: [String: String] {
+    static var headers: [String: String] {
         return ["Accept": "application/vnd.github+json", "Authorization": "Bearer \(token)", "X-GitHub-Api-Version": "2022-11-28"]
+    }
+    
+    static var headerTestRequest: URLRequest {
+        return URLRequest(urlString: baseUrl, headers: headers)
     }
     
     // private methods
