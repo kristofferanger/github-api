@@ -15,8 +15,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .red
-        
+        self.view.backgroundColor = UIColor(hex: kLightPinkColor)
+
         // init view model and start loading data
         viewModel = RepoListViewModel()
         viewModel.loading = loading
@@ -60,14 +60,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: RepoCell.identifier, for: indexPath) as! RepoCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: RepoTableViewCell.identifier, for: indexPath) as! RepoTableViewCell
         
         let repo = viewModel.repos[indexPath.row]
-        
-        cell.textLabel?.text = repo.name
+        cell.configure(with: repo)
+        cell.backgroundColor = .clear
         
         return cell
     }
 
 }
-
