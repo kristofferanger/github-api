@@ -12,7 +12,7 @@ class NetworkManager {
     
     // add your personal data here
     private static let owner = "kristofferanger"
-    private static let token = "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"
+    private static let token = "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"
 
     // public methods
     static func getRepos(completion: @escaping(Result<[Repo], Error>) -> Void) {
