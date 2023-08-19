@@ -21,7 +21,6 @@
 		E395A1AF29A5E55A0040111F /* UIView+additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E395A1AC29A5E55A0040111F /* UIView+additions.swift */; };
 		E395A1B529A5E9430040111F /* RepoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E395A1B429A5E9430040111F /* RepoTableViewCell.swift */; };
 		E395A1B729A614440040111F /* ModelObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = E395A19E29A4E2890040111F /* ModelObjects.swift */; };
-		E395A1BA29A61B980040111F /* App Assignment Blocket.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E395A1B929A61B980040111F /* App Assignment Blocket.pdf */; };
 		E395A1BC29A61F230040111F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E395A1BB29A61F230040111F /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,7 +51,6 @@
 		E395A1AB29A5E55A0040111F /* UIColor+additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+additions.swift"; sourceTree = "<group>"; };
 		E395A1AC29A5E55A0040111F /* UIView+additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+additions.swift"; sourceTree = "<group>"; };
 		E395A1B429A5E9430040111F /* RepoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoTableViewCell.swift; sourceTree = "<group>"; };
-		E395A1B929A61B980040111F /* App Assignment Blocket.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "App Assignment Blocket.pdf"; sourceTree = "<group>"; };
 		E395A1BB29A61F230040111F /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,7 +115,6 @@
 		E395A1A929A5E4E10040111F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				E395A1B929A61B980040111F /* App Assignment Blocket.pdf */,
 				E395A16E29A4E24A0040111F /* AppDelegate.swift */,
 				E395A17029A4E24A0040111F /* SceneDelegate.swift */,
 				E395A17429A4E24A0040111F /* Main.storyboard */,
@@ -251,7 +248,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E395A1BA29A61B980040111F /* App Assignment Blocket.pdf in Resources */,
 				E395A17B29A4E24D0040111F /* LaunchScreen.storyboard in Resources */,
 				E395A17829A4E24D0040111F /* Assets.xcassets in Resources */,
 				E395A17629A4E24A0040111F /* Main.storyboard in Resources */,
