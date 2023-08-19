@@ -18,7 +18,7 @@ let kTealColor = 0x86C8BCFF
 extension UIColor {
     
     class var backgroundColor: UIColor {
-        return UIColor(hex: UITraitCollection.current.userInterfaceStyle == .dark ? kTealColor : kLightGreenColor)
+        return UIColor(named: "Background") ?? .systemBackground
     }
     
     convenience init(hex: Int) {

@@ -14,13 +14,9 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.backgroundColor
+        self.title = repo?.name ?? "Unknown"
         
         guard let repo else { return }
-        
-        let titleLabel = UILabel()
-        titleLabel.font = .boldSystemFont(ofSize: 30)
-        titleLabel.text = repo.name
-        titleLabel.numberOfLines = 0
         
         let dateLabel = UILabel()
         dateLabel.font = .italicSystemFont(ofSize: 14)
@@ -46,8 +42,7 @@ class DetailViewController: UIViewController {
         }
         let button = UIButton(configuration: configuration, primaryAction: action)
 
-        
-        let stackView = UIStackView(arrangedSubviews: [titleLabel, dateLabel, detailLabel, button])
+        let stackView = UIStackView(arrangedSubviews: [dateLabel, detailLabel, button])
         stackView.axis = .vertical
         stackView.spacing = 10
         
@@ -56,7 +51,7 @@ class DetailViewController: UIViewController {
         backgroundView.elevate(height: 4)
         backgroundView.layer.cornerRadius = 10.0
         backgroundView.addSubviewPinnedToEdges(stackView, top: 10, bottom: nil, leading: 10, trailing: 10)
-
-        self.view.addSubviewPinnedToEdges(backgroundView, top: 80, bottom: 40, leading: 16, trailing: 16)
+        
+        self.view.addSubviewPinnedToEdges(backgroundView, leading: 16, trailing: 16, useSafeArea: true)
     }
 }
